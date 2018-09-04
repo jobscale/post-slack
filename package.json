@@ -1,0 +1,24 @@
+{
+  "name": "post-slack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app/index.js",
+  "scripts": {
+    "start": "NODE_PATH=./app/config:./app/modules node app",
+    "channel:clear": "NODE_PATH=./app/config:./app/modules node app/clear-channel",
+    "lint": "eslint '**/*.js'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^2.17.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.4.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "http-proxy-agent": "^2.1.0",
+    "https-proxy-agent": "^2.2.1"
+  }
+}
