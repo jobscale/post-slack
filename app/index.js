@@ -25,7 +25,7 @@ const app = {
     data.text = options.text;
     if (!data.text) {
       logger.info('Usage: npm start -- --text "hello post-slack"');
-      logger.info('Usage: NODE_PATH=./app/config:./app/modules node app --text "hello post-slack"');
+      logger.info('Usage: NODE_PATH=./app:./modules node app --text "hello post-slack"');
       return;
     }
     logger.info({ options });

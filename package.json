@@ -4,8 +4,8 @@
   "description": "",
   "main": "app/index.js",
   "scripts": {
-    "start": "NODE_PATH=./app/config:./modules node app",
-    "channel:clear": "NODE_PATH=./app/config:./modules node app/clear-channel",
+    "start": "NODE_PATH=./app:./modules node app",
+    "channel:clear": "NODE_PATH=./app:./modules node app/clear-channel",
     "lint": "eslint '**/*.js'"
   },
   "keywords": [],
