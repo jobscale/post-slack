@@ -4,15 +4,16 @@
   "description": "",
   "main": "app/index.js",
   "scripts": {
-    "start": "NODE_PATH=./app:./modules node app",
-    "channel:clear": "NODE_PATH=./app:./modules node app/clear-channel",
+    "start": "NODE_PATH=./app node app",
+    "channel:clear": "NODE_PATH=./app node app/clear-channel",
     "lint": "eslint '**/*.js'"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "commander": "^2.17.1"
+    "commander": "^2.17.1",
+    "slack": "github:jobscale/slack"
   },
   "devDependencies": {
     "eslint": "^5.4.0",
