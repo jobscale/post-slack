@@ -10,9 +10,9 @@ vi app/env.json
 
 ### Usage
 
-`''
+```
 npm start -- --text "hello post-slack"
-''`
+```
 
 or
 
