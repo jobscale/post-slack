@@ -1,25 +1,24 @@
 {
   "name": "post-slack",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
   "main": "app/index.js",
   "scripts": {
     "start": "NODE_PATH=./app node app",
     "channel:clear": "NODE_PATH=./app node app/clear-channel",
-    "lint": "eslint '**/*.js'"
+    "lint": "eslint . --fix"
   },
-  "keywords": [],
-  "author": "",
-  "license": "MIT",
   "dependencies": {
-    "commander": "^2.17.1",
-    "slack": "github:jobscale/slack"
+    "@jobscale/logger": "^0.0.7",
+    "@jobscale/slack": "^0.0.5",
+    "commander": "^9.4.1"
   },
   "devDependencies": {
-    "eslint": "^5.4.0",
-    "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.14.0",
-    "http-proxy-agent": "^2.1.0",
-    "https-proxy-agent": "^2.2.1"
+    "eslint": "^8.26.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0"
   }
 }

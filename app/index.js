@@ -1,21 +1,22 @@
+const { Slack } = require('@jobscale/slack');
+const { logger } = require('@jobscale/logger');
 const program = require('commander');
-const env = require('env');
-const { Slack } = require('slack');
+const env = require('env.json');
 
-const app = {
-  datas: [{
-    text: undefined,
-    username: undefined,
-    channel: undefined,
-    icon_emoji: undefined,
-    attachments: [{
-      fallback: undefined,
-      thumb_url: undefined,
-    }],
+const template = {
+  text: undefined,
+  username: undefined,
+  channel: undefined,
+  icon_emoji: undefined,
+  attachments: [{
+    fallback: undefined,
+    thumb_url: undefined,
   }],
-  main() {
-    const logger = console;
-    const data = Object.assign({}, this.datas[0]);
+};
+
+class App {
+  post() {
+    const data = { ...template };
     program.option('--text <text>');
     program.option('--username <text>');
     program.option('--channel <text>');
@@ -32,8 +33,9 @@ const app = {
     data.username = options.username;
     data.channel = options.channel;
     data.icon_emoji = options.emoji;
-    new Slack(env.slack).send(data)
+    new Slack(env).send(data)
     .then(res => logger.info(res));
-  },
-};
-app.main();
+  }
+}
+
+new App().post();
