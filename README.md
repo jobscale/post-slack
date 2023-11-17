@@ -1,7 +1,7 @@
 ### Setting
 
 ```bash
-git clone --depth 1 https://github.com/jobscale/post-slack.git
+git clone --depth 1 git@github.com:jobscale/post-slack.git
 cd post-slack
 npm i
 cat app/example.env.json > app/env.json
