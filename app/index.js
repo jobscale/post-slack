@@ -20,21 +20,22 @@ const template = {
 class App {
   post() {
     const data = { ...template };
-    program.option('--text <text>');
-    program.option('--username <text>');
-    program.option('--channel <text>');
-    program.option('--emoji <text>');
+    const optionList = [
+      '--text <text>',
+      '--username <text>',
+      '--channel <text>',
+      '--emoji <text>',
+    ];
+    for (const option of optionList) {
+      program.option(option);
+    }
     program.parse(process.argv);
     const options = program.opts();
     data.text = options.text;
     if (!data.text) {
       logger.info('Usage: npm start -- --text "hello post-slack"');
       logger.info('Usage: node app/index.js --text "hello post-slack"');
-      logger.info(`Options:
-      --text <text>
-      --username <text>
-      --channel <text>
-      --emoji <text>`);
+      logger.info(`Options:\n    ${optionList.join('\n    ')}`);
       return;
     }
     logger.info({ options });
