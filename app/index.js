@@ -1,7 +1,10 @@
-const { Slack } = require('@jobscale/slack');
-const { logger } = require('@jobscale/logger');
-const program = require('commander');
-const env = require('env.json');
+import fs from 'fs';
+import { Slack } from '@jobscale/slack';
+import { createLogger } from '@jobscale/logger';
+import { program } from 'commander';
+
+const logger = createLogger('info', { noPathName: true, noType: true });
+const env = JSON.parse(fs.readFileSync('app/env.json').toString());
 
 const template = {
   text: undefined,
@@ -26,7 +29,12 @@ class App {
     data.text = options.text;
     if (!data.text) {
       logger.info('Usage: npm start -- --text "hello post-slack"');
-      logger.info('Usage: NODE_PATH=./app:./modules node app --text "hello post-slack"');
+      logger.info('Usage: node app/index.js --text "hello post-slack"');
+      logger.info(`Options:
+      --text <text>
+      --username <text>
+      --channel <text>
+      --emoji <text>`);
       return;
     }
     logger.info({ options });
