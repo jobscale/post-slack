@@ -1,6 +1,6 @@
 {
   "name": "post-slack",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "",
   "keywords": [],
   "author": "",
@@ -9,6 +9,7 @@
   "main": "app/index.js",
   "scripts": {
     "start": "node app/index.js",
+    "pretest": "date -Iseconds",
     "lint": "eslint",
     "test": "npm run lint"
   },
@@ -19,7 +20,7 @@
     "commander": "^14.0.2"
   },
   "devDependencies": {
-    "@jobscale/eslint-plugin-standard": "^0.0.7",
+    "@jobscale/eslint-plugin-standard": "^0.0.8",
     "eslint": "^9.39.1",
     "eslint-plugin-jest": "^29.2.1",
     "pre-commit": "^1.2.2"
