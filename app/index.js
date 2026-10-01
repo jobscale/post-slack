@@ -1,9 +1,9 @@
 import fs from 'fs';
 import { Slack } from '@jobscale/slack';
-import { createLogger } from '@jobscale/logger';
+import { createLogger } from '@jobscale/create-logger';
 import { program } from 'commander';
 
-const logger = createLogger('info', { noPathName: true, noType: true });
+const logger = createLogger('info');
 const env = JSON.parse(fs.readFileSync('app/env.json').toString());
 
 const template = {

@@ -1,6 +1,6 @@
 {
   "name": "post-slack",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "",
   "keywords": [],
   "author": "",
@@ -15,9 +15,9 @@
   },
   "pre-commit": "test",
   "dependencies": {
-    "@jobscale/logger": "^0.10.1",
-    "@jobscale/slack": "^0.3.0",
-    "commander": "^14.0.2"
+    "@jobscale/create-logger": "^1.0.5",
+    "@jobscale/slack": "^0.3.3",
+    "commander": "^14.0.3"
   },
   "devDependencies": {
     "@jobscale/eslint-plugin-standard": "^0.0.11",

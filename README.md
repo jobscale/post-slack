@@ -17,5 +17,5 @@ npm start -- --text "hello post-slack"
 or
 
 ```
-node app/index.js --text "hello post-slack"
+node app/index.js --text "hello post-slack" --username "jobs"
 ```
